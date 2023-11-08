@@ -11,7 +11,7 @@ from retry_requests import retry
 import altair as alt
 
 def getMeals(mensa_id):
-  return json.loads(urllib.request.urlopen("https://sls.api.stw-on.de/v1/locations/" + mensa_id + "/menu/" + "2023-11-06").read())["meals"]
+  return json.loads(urllib.request.urlopen("https://sls.api.stw-on.de/v1/locations/" + mensa_id + "/menu/" + datetime.today().strftime('%Y-%m-%d')).read())["meals"]
 
 st.set_page_config(layout="wide")
 
